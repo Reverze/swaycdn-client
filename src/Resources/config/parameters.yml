@@ -1,0 +1,38 @@
+parameters:
+    swaycdn.client:
+        token:
+            hbplay: 41e6ed9df84c52aa3ae01158fe9ba78f
+        alias:
+            package:
+                hbplay: hbp
+            repository:
+                gameServerResources: game
+                
+    swaycdn.connector:
+        network: cdn.swayware.eu/app_dev.php
+        secureHttp: false
+        protocol: swaycdn
+        defaults:
+            resourceNotFound: "default-resource"
+    swaycdn.cache:
+        lifetime: 3600
+        doctrine_cache_service:
+            type: apcu
+            name: apcu_cache
+    swaycdn.router:
+        routes:
+            list_packages:
+                path: /ls-content/deliver/package/{packageName}/{repositoryName}
+            get_resource_package:
+                path: /content/deliver/package/{packageName}/{repositoryName}/{resourceIdentifier}
+            is_package_exists:
+                path: /info-content/deliver/is-package/{packageName}
+        query:
+            alias:
+                accessToken: act
+                
+    swaycdn.twig_extension:
+        alias: 
+            test: testPackage:testRepository
+        defaults:
+            extension: png

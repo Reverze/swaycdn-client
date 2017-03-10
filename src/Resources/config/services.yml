@@ -1,0 +1,23 @@
+services:
+    swaycdn.router:
+        class: SwayCDN\Client\Service\Router
+        arguments: [ "%swaycdn.router%" ]
+    swaycdn.cache:
+        class: SwayCDN\Client\Service\Cache
+        arguments: [ "%swaycdn.cache%", "@service_container" ]
+    swaycdn.connector:
+        class: SwayCDN\Client\Service\Connector
+        arguments: [ "@circle.restclient", "@swaycdn.cache", "@swaycdn.router", "%swaycdn.connector%" ]
+    swaycdn.client:
+        class: SwayCDN\Client\Service\Client
+        arguments: [ "@swaycdn.connector", "%swaycdn.client%" ]
+        
+    swaycdn.twig.client_extension:
+        class: SwayCDN\Client\Twig\ClientExtension
+        arguments: [ "@swaycdn.client", "%swaycdn.twig_extension%" ]
+        public: false
+        tags:
+            - { name: twig.extension }
+    
+        
+    
