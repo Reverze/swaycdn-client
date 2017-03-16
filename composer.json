@@ -1,5 +1,5 @@
 {
-    "name": "rev/swaycdn-client-sy",
+    "name": "rev/swaycdn-client",
     "description": "SwayCDN Client for symfony",
     "type": "symfony-bundle",
     "authors": [
