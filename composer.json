@@ -1,0 +1,33 @@
+{
+    "name": "rev/swaycdn-client",
+    "description": "SwayCDN Client for symfony",
+    "type": "symfony-bundle",
+    "authors": [
+        {
+            "name": "Reverze",
+            "email": "hawkmedia24@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "ci/restclientbundle": "2.0.*",
+        "doctrine/doctrine-cache-bundle": "^1.2",
+        "symfony/framework-bundle": ">=2.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "SwayCDN\\Client\\": "src/"
+        }
+    },
+    "target_dir": "",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.2-dev"
+        }
+    }
+    
+}

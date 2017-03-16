@@ -1,0 +1,24 @@
+framework:
+    secret: test
+    session:
+        storage_id: session.storage.mock_file
+    test: ~
+    
+circle_rest_client:
+    curl:
+      defaults:
+        CURLOPT_HTTPHEADER:     [ 'Content-Type: application/json' ]
+        CURLOPT_FOLLOWLOCATION: true
+        
+doctrine_cache:
+    aliases:
+        apcu_cache: my_apc_metadata_cache
+    providers:
+        my_apc_metadata_cache:
+            type: apcu
+            namespace: metadata_cache_ns
+            aliases:
+                - apcu_cache
+    
+
+
